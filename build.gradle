@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.marceldev'
-version = '0.0.6'
+version = '0.0.7'
 
 java {
     toolchain {
@@ -21,7 +21,6 @@ bootJar {
 jar {
     enabled = true
     archiveBaseName.set('our-company-lunch-common')
-    archiveClassifier.set('')
 }
 
 configurations {
