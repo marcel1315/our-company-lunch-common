@@ -9,7 +9,6 @@ import java.util.List;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,17 +18,11 @@ import org.springframework.util.StringUtils;
 @RequiredArgsConstructor
 public class TokenProvider {
 
-  @Value("${jwt.expired-in-hour}")
-  private long expiredInHour;
+  private final long expiredInHour;
 
-  @Value("${jwt.secret}")
-  private String secretKey;
+  private final String secretKey;
 
   private static final String KEY_ROLE = "role";
-
-  private long getExpiredInSecond() {
-    return 1000 * 60 * 60 * expiredInHour;
-  }
 
   public String generateToken(String email, String role) {
     Claims claims = Jwts.claims()
@@ -90,5 +83,9 @@ public class TokenProvider {
         null,
         List.of(authority)
     );
+  }
+
+  private long getExpiredInSecond() {
+    return 1000 * 60 * 60 * expiredInHour;
   }
 }
