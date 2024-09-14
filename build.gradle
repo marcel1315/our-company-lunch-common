@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.marceldev'
-version = '0.0.8'
+version = '0.0.9'
 
 publishing {
     publications {
@@ -33,6 +33,7 @@ bootJar {
 jar {
     enabled = true
     archiveBaseName.set('our-company-lunch-common')
+    archiveClassifier.set('')
 }
 
 configurations {
