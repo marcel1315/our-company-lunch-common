@@ -6,8 +6,22 @@ Contains:
 - JwtAuthenticationFilter
 - TokenProvider
 
+# How to import (Gradle)
+In build.gradle file dependencies,
+```
+implementation 'com.github.marcel1315:our-company-lunch-common:0.0.11'
+```
+
+Need to add repository for jitpack besides mavenCentral.
+```
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+```
+
 # Usage
-Add below properties in application.yml.
+In project, add below properties in application.yml.
 
 ```
 common:
