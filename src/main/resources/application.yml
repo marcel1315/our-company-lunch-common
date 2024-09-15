@@ -1,7 +1,3 @@
 spring:
   application:
     name: our-company-lunch-common-server
-common:
-  jwt:
-    secret: secret
-    expired-in-hour: 1
